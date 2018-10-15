@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>智能互联,成就卓越</title>
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_440686_4nfx3fyke9daemi.css">
+    <script src="static/js/plugin/iframeResizer.contentWindow.js"></script>
+    <script src="${require('@ued/vue-common').http}"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript">
+      const script = document.createElement('script');
+      script.type = '';
+      if (location.protocol === 'https:') {
+          script.src = '//resources.g7s.huoyunren.com/G7SMap/dist/v1.6/g7smap.js';
+      } else {
+          script.src = '//g7s.resources.huoyunren.com/G7SMap/dist/v1.6/g7smap.js';
+      }
+      document.body.appendChild(script);
+  </script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

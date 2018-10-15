@@ -1,0 +1,24 @@
+{
+    "name": "@ued/dn-template-g7s",
+    "version": "0.2.0",
+    "description": "g7s新框架",
+    "scripts": {
+        "start": "dn dev",
+        "build": "dn build"
+    },
+    "publishConfig": {
+        "registry": "http://npm.demo.ued.g7s.chinawayltd.com"
+    },
+    "dependencies": {
+        "@ued/g7s": "latest",
+        "@ued/request": "latest",
+        "vue-beauty": "latest"
+    },
+    "devDependencies": {
+        "@ued/dn-middleware-update": "latest",
+        "@ued/dn-middleware-webpack": "latest",
+        "@ued/vue-common": "1.1.1",
+        "dn-middleware-clean": "^1.0.1",
+        "dn-middleware-copy": "^0.2.0"
+    }
+}

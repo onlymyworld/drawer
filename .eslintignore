@@ -1,0 +1,6 @@
+build/*.js
+config/*.js
+static/**/*.js
+static/**/*.html
+plugin/**/*.js
+**/vue-beauty/vb/**

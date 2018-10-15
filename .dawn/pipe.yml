@@ -1,0 +1,18 @@
+init:
+  - name: pkginfo
+
+dev:
+  - name: '@ued/dn-middleware-update'
+    package: ['@ued/g7s']
+  - name: '@ued/dn-middleware-webpack'
+    manifest: ./node_modules/@ued/vue-common/dist/vue-common-runtime-manifest.json
+    server: true
+
+build:
+  - name: clean
+    target: ./dist/*
+  - name: '@ued/dn-middleware-webpack'
+    manifest: ./node_modules/@ued/vue-common/dist/vue-common-runtime-manifest.json
+  - name: copy
+    files:
+      ./dist/static/: ./static/**/*.*
