@@ -1,114 +1,133 @@
-# g7s模版使用
+### Drawer
+抽屉从父窗体边缘滑入，覆盖住部分父窗体内容，用户在抽屉内操作时不必离开当前任务，操作完成后，可以平滑地回到原任务。
+#### 何时使用
+- 当需要一个附加的面板来控制父窗体内容，这个面板在需要时呼出。比如，控制界面展示样式，往界面中添加内容。
+- 当需要在当前任务流中插入临时任务，创建或预览附加内容。比如展示协议条款，创建子对象。
 
-## 关于vega（ajax请求）
+代码演示
 
-模版内封装了vega专用接口，它支持一种vega加密或者多种加密，加密的配置，申请后，直接填入了config.js中。注意product只能传入一个
-
-我们在框架内建立了config.js配置文件，只需要把相应的参数填入。
-
+##### 生成不同方向的drawer
 ```
-Vue.use(g7s, {
-    apis: {
-        'getTrucks post': '/v1/truck/truck/list',
-        'truckList post': '/v1/truck/truck/truck_list_complex',
-        'truckListComplex post': '/v1/truck/truck/truck_list_complex',
-        user: {
-            'info get': '/v1/truck/truck/list',
+<template>
+  <div class="wrap">
+        <v-radio v-model="placement" label="top">上</v-radio>
+        <v-radio v-model="placement" label="right">右</v-radio>
+        <v-radio v-model="placement" label="bottom">下</v-radio>
+        <v-radio v-model="placement" label="left">左</v-radio>
+        <v-button @click="openDrawer">open</v-button>
+        <drawer
+            :visible="showDrawer"
+            :placement="placement"
+            :closable=false
+            height="450px"
+            width="600px"
+            :maskClosable=true
+            :mask=true
+            :close="closeDrawer">
+            <p>aaaa</p>
+        </drawer>
+    </div>
+</template>
+<script type="text/ecmascript-6">
+import drawer from './drawer.vue';
+
+export default {
+    data() {
+        return {
+            placement: 'right',
+            showDrawer: false,
+        };
+    },
+    methods: {
+        openDrawer() {
+            this.showDrawer = true;
+        },
+        closeDrawer() {
+            this.showDrawer = false;
         },
     },
-    vega: {
-        test: {
-            accessId: '12323',
-            secretKey: 'wwHSGGnblrHvXh40kQURkMfg3Q2gjorN',
+};
+</script>
+```
+##### 生成二级drawer
+
+```
+<template>
+    
+    <div class="home-page page-common">
+        <div class="wrap">
+            <v-button @click="openDrawer">open</v-button>
+            <drawer
+            :visible="showDrawer"
+            :placement="placement"
+            :closable=false
+            height="450px"
+            width="600px"
+            :maskClosable=true
+            :mask=true
+            :close="closeDrawer">
+            <p>aaaa</p>
+            <v-button @click="openSecondDrawer">open second drawer</v-button>
+                <drawer
+                slot='nest'
+                placement="bottom"
+                :visible="secondDrawer"
+                :close="closeSecondDrawer">
+                </drawer>
+            </drawer>
+        </div>
+    </div>
+</template>
+
+<script type="text/ecmascript-6">
+import drawer from './drawer.vue';
+
+export default {
+    data() {
+        return {
+            placement: 'right',
+            showDrawer: false,
+            secondDrawer: false,
+            maskStyle: {
+                background: 'red',
+            },
+        };
+    },
+    methods: {
+        openDrawer() {
+            this.showDrawer = true;
         },
-        demo: {
-            accessId: '23321',
-            secretKey: 'RbRkDi6gizSxsy4KTu6eOR4szVEXNGfU',
+        closeDrawer() {
+            this.showDrawer = false;
         },
-        online: {
-            accessId: '12332',
-            secretKey: 'K6y0EFtT1b80o9U0RtL2qV6JcQaIpV5F',
+        openSecondDrawer() {
+            this.secondDrawer = true;
         },
-        localhost: {
-            accessId: 'bfcguvy',
-            secretKey: 'wwHSGGnblrHvXh40kQURkMfg3Q2gjorN',
+        closeSecondDrawer() {
+            this.secondDrawer = false;
         },
     },
-    product: 'truck',
-    name: '$vega', // 默认为'$vega'
-})
-
-// 调用：
-this.$vega.user.info() // 调用apis内的user模块下的info接口；
-this.$vega.getTrucks() // 调用apis内的gettrucks接口
-
-
-// 也可以注册多个vega
-
-// g7s包初始化，接入了vega，也可以不这么调用函数；支持多次调用
-Vue.use(g7s, [{
-    apis: { ...index },
-    vega: config.vega,
-    product: config.product,
-}, {
-    apis: { ...index },
-    vega: truckConfig.vega,
-    name: '$api',
-}]);
-
-// 调用方式跟上面一致，注意name的区分。
-
+};
+</script>
 ```
 
-## 关于页面跳转
-
-因为我们开发的是g7s的子系统，我们需要门户帮助我们跳转，所以需要调用门户的方法去跳转
-
-```
-// 第一种调用：
-import { goto } from '@ued/g7s/libs/util';
-
-goto({ name: home })
 
 
-// 第二种调用：
-<div v-goto="{ name: home }"><div>
+## API
 
-```
-注意，在跳转过程中，建议使用router的name跳转
-
-## 关于开发模式
-
-子系统的charles代理不够友好，我们更新了开发方式。
-
-1、在内地址栏中放入相应环境和token就可以调取相应环境的接口
-
-```
-http://172.22.112.203:8081/?env=demo&token=7238a40059d6f96f6e1f8ece729023ff#/home
-
-这个会去调用demo环境的vega接口
-```
-
-2、dev.vue内可以配置左侧菜单，只需要用npm start启动，dn dev启动是没有左侧菜单的
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| closable | 是否显示右上角的关闭按钮 | boolean | true |
+| destroyOnClose | 关闭时销毁 Drawer 里的子元素 | boolean | false |
+| maskClosable | 点击蒙层是否允许关闭 | boolean | true |
+| mask | 是否展示遮罩 | Boolean | true |
+| maskStyle | 遮罩样式 | object | {} |
+| style | 可用于设置 Drawer 的样式，调整浮层位置等 | object | - |
+| title | 标题 | string \| ReactNode | - |
+| visible | Drawer 是否可见 | boolean | - |
+| width | 宽度 | string \| number | 256px |
+| height | 高度, 在 `placement` 为 `top` 或 `bottom` 时使用 | string \| number | 256px |
+| placement | 抽屉的方向 | 'top'  \| 'right' \| 'bottom' \| 'left' | 'right'
+| close | 点击遮罩层或右上角叉或取消按钮的回调 | function(e) | 无 |
 
 
-## 关于g7s子系统和门户的交互
-
-门户通过gateway.js来监听子系统传入的参数，子系统内，我们封装了g7s库来与门户交互。
-具体查看 https://git.chinawayltd.com/frontend/ued-kit/tree/master/tools/g7s
-
-```
-import { g7s } from '@ued/g7s';
-
-// 调用
-g7s.login();
-
-```
-
-## 关于自定义指令
-
-@ued/g7s内的自定义指令，都在vue安装g7s插件的时候自动注册。我们只需要在相应的地方使用，常用的如goto,clickout等
-
-
-## 备注
-如有问题，请联系开发维护人员
