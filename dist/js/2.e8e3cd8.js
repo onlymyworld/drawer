@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{231:function(t,n,e){},234:function(t,n,e){"use strict";var i=e(231);e.n(i).a},239:function(t,n,e){"use strict";e.r(n);var i=function(){var t=this.$createElement;return(this._self._c||t)("div",{staticClass:"page-common"},[this._v("\n    这是demo页\n")])};i._withStripped=!0;var o={data:function(){return{}},computed:{},mounted:function(){},methods:{}},s=(e(234),e(34)),c=Object(s.a)(o,i,[],!1,null,"6286b906",null);c.options.__file="src/views/demo.vue";n.default=c.exports}}]);
+//# sourceMappingURL=2.e8e3cd8.js.map

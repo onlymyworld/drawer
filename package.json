@@ -10,7 +10,7 @@
         "registry": "http://npm.demo.ued.g7s.chinawayltd.com"
     },
     "dependencies": {
-        "@ued/g7s": "latest",
+        "@ued/g7s": "^0.1.9",
         "@ued/request": "latest",
         "vue-beauty": "latest"
     },

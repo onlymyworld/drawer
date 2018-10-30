@@ -149,9 +149,9 @@
     webpack-dev-server "^3.1.4"
     webpack-merge "^4.1.3"
 
-"@ued/g7s@latest":
-  version "0.1.7"
-  resolved "http://npm.demo.ued.g7s.chinawayltd.com/@ued%2fg7s/-/g7s-0.1.7.tgz#ad8e6ca8823d3b4f05da154483d4e227e33a8367"
+"@ued/g7s@^0.1.9":
+  version "0.1.9"
+  resolved "http://npm.demo.ued.g7s.chinawayltd.com/@ued%2fg7s/-/g7s-0.1.9.tgz#437baff4c80241dbcd9bb709dc41aac2f1703252"
   dependencies:
     "@ued/request" "^0.4.1"
     "@ued/vue-common" "1.1.1"
@@ -1796,7 +1796,11 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   version "1.0.30000892"
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/caniuse-db/-/caniuse-db-1.0.30000892.tgz#3a03ecec4283caa5dac49facf024d13113c4499f"
 
-caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000890:
+caniuse-lite@^1.0.30000844:
+  version "1.0.30000902"
+  resolved "http://npm.demo.ued.g7s.chinawayltd.com/caniuse-lite/-/caniuse-lite-1.0.30000902.tgz#74eaf6ed7f1d31e5148725081c9df60051c5e2b3"
+
+caniuse-lite@^1.0.30000890:
   version "1.0.30000892"
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/caniuse-lite/-/caniuse-lite-1.0.30000892.tgz#344d2b51ee3ff5977537da4aa449c90eec40b759"
 
@@ -2051,13 +2055,7 @@ colors@~1.1.2:
   version "1.1.2"
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/colors/-/colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63"
 
-combined-stream@1.0.6:
-  version "1.0.6"
-  resolved "http://npm.demo.ued.g7s.chinawayltd.com/combined-stream/-/combined-stream-1.0.6.tgz#723e7df6e801ac5613113a7e445a9b69cb632818"
-  dependencies:
-    delayed-stream "~1.0.0"
-
-combined-stream@~1.0.6:
+combined-stream@^1.0.6, combined-stream@~1.0.6:
   version "1.0.7"
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/combined-stream/-/combined-stream-1.0.7.tgz#2d1d24317afb8abe95d6d2c0b07b57813539d828"
   dependencies:
@@ -2396,11 +2394,11 @@ dashdash@^1.12.0:
     assert-plus "^1.0.0"
 
 data-urls@^1.0.0:
-  version "1.0.1"
-  resolved "http://npm.demo.ued.g7s.chinawayltd.com/data-urls/-/data-urls-1.0.1.tgz#d416ac3896918f29ca84d81085bc3705834da579"
+  version "1.1.0"
+  resolved "http://npm.demo.ued.g7s.chinawayltd.com/data-urls/-/data-urls-1.1.0.tgz#15ee0582baa5e22bb59c77140da8f9c76963bbfe"
   dependencies:
     abab "^2.0.0"
-    whatwg-mimetype "^2.1.0"
+    whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
 date-fns@1.29.0, date-fns@^1.29.0:
@@ -2803,9 +2801,13 @@ ejs@^2.5.7:
   version "2.6.1"
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/ejs/-/ejs-2.6.1.tgz#498ec0d495655abc6f23cd61868d926464071aa0"
 
-electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47, electron-to-chromium@^1.3.79:
+electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.79:
   version "1.3.79"
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/electron-to-chromium/-/electron-to-chromium-1.3.79.tgz#774718f06284a4bf8f578ac67e74508fe659f13a"
+
+electron-to-chromium@^1.3.47:
+  version "1.3.82"
+  resolved "http://npm.demo.ued.g7s.chinawayltd.com/electron-to-chromium/-/electron-to-chromium-1.3.82.tgz#7d13ae4437d2a783de3f4efba96b186c540b67b1"
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -3597,11 +3599,11 @@ forever-agent@~0.6.1:
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
 
 form-data@^2.3.1, form-data@~2.3.2:
-  version "2.3.2"
-  resolved "http://npm.demo.ued.g7s.chinawayltd.com/form-data/-/form-data-2.3.2.tgz#4970498be604c20c005d4f5c23aecd21d6b49099"
+  version "2.3.3"
+  resolved "http://npm.demo.ued.g7s.chinawayltd.com/form-data/-/form-data-2.3.3.tgz#dcce52c05f644f298c6a7ab936bd724ceffbf3a6"
   dependencies:
     asynckit "^0.4.0"
-    combined-stream "1.0.6"
+    combined-stream "^1.0.6"
     mime-types "^2.1.12"
 
 formidable@^1.2.0:
@@ -5126,7 +5128,17 @@ miller-rabin@^4.0.0:
   version "1.36.0"
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/mime-db/-/mime-db-1.36.0.tgz#5020478db3c7fe93aad7bbcc4dcf869c43363397"
 
-mime-types@^2.1.12, mime-types@~2.1.17, mime-types@~2.1.18, mime-types@~2.1.19:
+mime-db@~1.37.0:
+  version "1.37.0"
+  resolved "http://npm.demo.ued.g7s.chinawayltd.com/mime-db/-/mime-db-1.37.0.tgz#0b6a0ce6fdbe9576e25f1f2d2fde8830dc0ad0d8"
+
+mime-types@^2.1.12, mime-types@~2.1.19:
+  version "2.1.21"
+  resolved "http://npm.demo.ued.g7s.chinawayltd.com/mime-types/-/mime-types-2.1.21.tgz#28995aa1ecb770742fe6ae7e58f9181c744b3f96"
+  dependencies:
+    mime-db "~1.37.0"
+
+mime-types@~2.1.17, mime-types@~2.1.18:
   version "2.1.20"
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/mime-types/-/mime-types-2.1.20.tgz#930cb719d571e903738520f8470911548ca2cc19"
   dependencies:
@@ -6365,8 +6377,8 @@ querystringify@^2.0.0:
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/querystringify/-/querystringify-2.1.0.tgz#7ded8dfbf7879dcc60d0a644ac6754b283ad17ef"
 
 randomatic@^3.0.0:
-  version "3.1.0"
-  resolved "http://npm.demo.ued.g7s.chinawayltd.com/randomatic/-/randomatic-3.1.0.tgz#36f2ca708e9e567f5ed2ec01949026d50aa10116"
+  version "3.1.1"
+  resolved "http://npm.demo.ued.g7s.chinawayltd.com/randomatic/-/randomatic-3.1.1.tgz#b776efc59375984e36c537b2f51a1f0aff0da1ed"
   dependencies:
     is-number "^4.0.0"
     kind-of "^6.0.0"
@@ -7098,8 +7110,8 @@ sprintf-js@~1.0.2:
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
 sshpk@^1.7.0:
-  version "1.15.1"
-  resolved "http://npm.demo.ued.g7s.chinawayltd.com/sshpk/-/sshpk-1.15.1.tgz#b79a089a732e346c6e0714830f36285cd38191a2"
+  version "1.15.2"
+  resolved "http://npm.demo.ued.g7s.chinawayltd.com/sshpk/-/sshpk-1.15.2.tgz#c946d6bd9b1a39d0e8635763f5242d6ed6dcb629"
   dependencies:
     asn1 "~0.2.3"
     assert-plus "^1.0.0"
@@ -7875,7 +7887,7 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
   dependencies:
     iconv-lite "0.4.24"
 
-whatwg-mimetype@^2.1.0:
+whatwg-mimetype@^2.1.0, whatwg-mimetype@^2.2.0:
   version "2.2.0"
   resolved "http://npm.demo.ued.g7s.chinawayltd.com/whatwg-mimetype/-/whatwg-mimetype-2.2.0.tgz#a3d58ef10b76009b042d03e25591ece89b88d171"
 
