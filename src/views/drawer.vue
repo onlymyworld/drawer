@@ -48,7 +48,7 @@ export default {
             type: Boolean,
             default: false,
         },
-        maskClosable: { //
+        maskclosable: { //
             type: Boolean,
             default: true,
         },
@@ -107,7 +107,7 @@ export default {
     },
     methods: {
         closeDrawer() {
-            if (this.maskClosable) {
+            if (this.maskclosable) {
                 this.close();
             }
             return false;

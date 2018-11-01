@@ -12,7 +12,7 @@
             :visible="showDrawer"
             :placement="placement"
             :closable=true
-            :maskClosable=true
+            :maskclosable=true
             :mask=true
             :close="closeDrawer">
             <p>aaaa</p>
@@ -23,7 +23,7 @@
             :closable=false
             height="450px"
             width="600px"
-            :maskClosable=true
+            :maskclosable=true
             :mask=true
             :close="closeMutiDrawer">
             <p>aaaa</p>
